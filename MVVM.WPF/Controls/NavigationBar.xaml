@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="MVVM.WPF.Controls.NavigationBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVM.WPF.Controls"
+             xmlns:nav="clr-namespace:MVVM.WPF.State.Navigators"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Kørselslog" Margin="5, 5, 5, 5"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <RadioButton Grid.Column="0" 
+                         Content="Users" 
+                         Margin="5, 3, 5, 3" 
+                         Command="{Binding UpdateCurrentViewModelCommand}" 
+                         CommandParameter="{x:Static nav:ViewType.UserView}"/>
+            
+            <RadioButton Grid.Column="1" 
+                         Content="Cars" 
+                         Margin="5, 3, 5, 3"
+                         Command="{Binding UpdateCurrentViewModelCommand}" 
+                         CommandParameter="{x:Static nav:ViewType.CarView}"/>
+            
+            <RadioButton Grid.Column="2" 
+                         Content="Logs" 
+                         Margin="5, 3, 5, 3"
+                         Command="{Binding UpdateCurrentViewModelCommand}" 
+                         CommandParameter="{x:Static nav:ViewType.LogView}"/>
+        </Grid>
+    </Grid>
+</UserControl>
+

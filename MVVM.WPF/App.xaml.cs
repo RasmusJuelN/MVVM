@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,12 @@ namespace MVVM.WPF
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            Window mainWindow = new MainWindow();
+            mainWindow.DataContext = new MainViewModel();
+            mainWindow.Show();
+            base.OnStartup(e);
+        }
     }
 }

@@ -12,9 +12,4 @@
     <ProjectReference Include="..\MVVM.EntityFramework\MVVM.EntityFramework.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
 </Project>
